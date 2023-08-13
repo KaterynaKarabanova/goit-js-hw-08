@@ -24,11 +24,14 @@ function autoInput() {
   }
 }
 formEl.addEventListener("submit", (e) => {
-  e.preventDefault()
+    e.preventDefault()
      userInfo.email =  formEl.email.value
-     userInfo.message = formEl.message.value
-  console.log(userInfo)  
+    userInfo.message = formEl.message.value
+    if (userInfo.email === `` || userInfo.message === ``) {
+        return
+    } else {
+        console.log(userInfo)  
     //OR sessionStorage// 
     localStorage.removeItem(CURRENT_FORM_KEY);
-  e.currentTarget.reset();
+  e.currentTarget.reset();}
 })
