@@ -29,9 +29,10 @@ formEl.addEventListener("submit", (e) => {
     userInfo.message = formEl.message.value
     if (userInfo.email === `` || userInfo.message === ``) {
         return
-    } else {
-        console.log(userInfo)  
+    } 
+        
     //OR sessionStorage// 
     localStorage.removeItem(CURRENT_FORM_KEY);
-  e.currentTarget.reset();}
+    e.currentTarget.reset()
+    console.log(userInfo)  
 })
